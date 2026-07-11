@@ -1,7 +1,8 @@
 #!/bin/bash
 
+
 echo "===================================================="
-echo "  🎫🎫🎫RemnaWave Support Bot Installer 🎫🎫🎫   "
+echo "  🎫🎫🎫 RemnaWave Support Bot Installer 🎫🎫🎫  "
 echo "===================================================="
 echo ""
 
