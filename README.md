@@ -15,7 +15,7 @@
 
 Интерактивный мастер установки, который сам всё проверит и настроит:
 
-`git clone https://github.com/GH-Sa1n/remnawave_bedolaga_support_bot.git`
+`git clone https://github.com/coolsvteam/Remnawave_support_bot.git`
 `cd remnawave_bedolaga_support_bot`
 `chmod +x setup.sh`
 `./setup.sh`
