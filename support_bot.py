@@ -34,6 +34,9 @@ PG_PASS = os.getenv('PG_PASS', '')
 DB_PATH = "data/support.db"
 db_lock = threading.Lock()
 
+if not TOKEN:
+    raise ValueError("TELEGRAM_TOKEN не указан в .env")
+
 bot = telebot.TeleBot(TOKEN)
 
 # --- ФУНКЦИЯ ПРОВЕРКИ ПОДПИСКИ (Postgres) ---
