@@ -1,4 +1,4 @@
 .env
-support.db
+data/support.db
 __pycache__/
 *.tar.gz
