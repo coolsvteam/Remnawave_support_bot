@@ -38,7 +38,8 @@ PG_USER=${PG_USER:-postgres}
 
 read -p "Пароль от БД (см. инструкцию): " PG_PASS
 
-read -p "Название Docker-сети панели (docker network ls): " NET_NAME
+read -p "Название Docker-сети панели (remnawave-network): " NET_NAME
+NET_NAME=${EXTERNAL_NETWORK_NAME:-remnawave-network}
 
 echo "Создаю .env файл..."
 
