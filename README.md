@@ -38,6 +38,7 @@ chmod +x setup.sh
 ### Найдите .env файл панели
    
 cd /opt/remnawave  # или где у вас установлена панель
+
 cat .env | grep -iE "DB_|POSTGRES|DATABASE"
 
 ---
