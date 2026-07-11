@@ -49,6 +49,7 @@ chmod +x setup.sh
 
 ### Удалить бота:
 
+```bash
 cd /root
-
 rm -rf Remnawave_support_bot
+```
