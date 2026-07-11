@@ -20,11 +20,12 @@ if [ -f .env ]; then
 fi
 
 echo "--- НАСТРОЙКА БОТА ---"
-read -p "Название вашего проекта (например, SecureWeb Support): " PROJECT_NAME
-read -p "Токен бота (от BotFather): " TELEGRAM_TOKEN
-read -p "ID админ-группы (начинается с -100): " ADMIN_GROUP_ID
-read -p "ID темы для логов/банов (например, 22): " BANS_TOPIC_ID
-read -p "Автозакрытие тикета (время в часах): " AUTO_CLOSE_HOURS
+
+read -p "Введите название вашего проекта (например, SecureWeb Support): " PROJECT_NAME
+read -p "Введите токен бота (от BotFather): " TELEGRAM_TOKEN
+read -p "Введите ID админ-группы (начинается с -100): " ADMIN_GROUP_ID
+read -p "Введите ID темы для логов/банов (например, 22): " BANS_TOPIC_ID
+read -p "Введите время автозакрытия тикета в часах: " AUTO_CLOSE_HOURS
 
 echo ""
 echo "--- НАСТРОЙКА БАЗЫ ДАННЫХ REMNAWAVE ---"
