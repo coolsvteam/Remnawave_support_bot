@@ -53,4 +53,4 @@ cat .env | grep -iE "DB_|POSTGRES|DATABASE"
 
 cd /root
 
-rm -rf Remnawave_support_bot  # Удаляем то, что уже скачали
+rm -rf Remnawave_support_bot
