@@ -55,6 +55,25 @@ cd /root/Remnawave_support_bot
 docker compose up -d --build
 ```
 
+### 💡 Полезные команды SQLite (через SSH)
+
+```bash
+# Перейти в папку бота
+cd /root/Remnawave_support_bot
+
+# Посмотреть всех забаненных
+sqlite3 data/support.db "SELECT * FROM users WHERE is_banned=1;"
+
+# Разбанить вручную
+sqlite3 data/support.db "UPDATE users SET is_banned=0 WHERE uid=540087018;"
+
+# Забанить с причиной
+sqlite3 data/support.db "UPDATE users SET is_banned=1, ban_reason='Спам' WHERE uid=123456789;"
+
+# Разбанить ВСЕХ
+sqlite3 data/support.db "UPDATE users SET is_banned=0;"
+```
+
 ### Удалить бота:
 
 ```bash
