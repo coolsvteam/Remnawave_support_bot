@@ -389,7 +389,7 @@ def admin_unban(message):
             run_query("UPDATE users SET is_banned=0 WHERE uid=?", (uid,))
             return bot.send_message(
                 message.chat.id, 
-                f"✅ Пользователь <code>{uid}</code> разбанен!", 
+                f"✅ Пользователь <code>{uid}</code> разблокирован!", 
                 parse_mode="HTML"
             )
         return bot.send_message(
@@ -405,20 +405,20 @@ def admin_unban(message):
         run_query("UPDATE users SET is_banned=0 WHERE uid=?", (uid,))
         bot.send_message(
             message.chat.id, 
-            f"✅ Пользователь <code>{uid}</code> разбанен!",
+            f"✅ Пользователь <code>{uid}</code> разблокирован!",
             parse_mode="HTML"
         )
         try:
-            bot.send_message(uid, "✅ Вы были разбанены службой поддержки.")
+            bot.send_message(uid, "✅ Вы были заблокированы службой поддержки.")
         except:
             pass
     except Exception as e:
         logger.error(f"Unban error: {e}")
-        bot.send_message(message.chat.id, "❌ Ошибка разбана")
+        bot.send_message(message.chat.id, "❌ Ошибка разблокировки")
 
 @bot.message_handler(commands=['banned'])
 def show_banned(message):
-    """Показать список забаненных пользователей"""
+    """Показать список заблокированных пользователей"""
     ADMIN_IDS = [540087018]
     
     if message.from_user.id not in ADMIN_IDS:
@@ -427,9 +427,9 @@ def show_banned(message):
     banned = run_query("SELECT uid, ban_reason FROM users WHERE is_banned=1", fetchall=True)
     
     if not banned:
-        return bot.send_message(message.chat.id, "✅ Забаненных пользователей нет")
+        return bot.send_message(message.chat.id, "✅ Заблокированных пользователей нет")
     
-    text = "🚫 <b>Забаненные пользователи:</b>\n\n"
+    text = "🚫 <b>Заблокированные пользователи:</b>\n\n"
     for uid, reason in banned:
         text += f"• <code>{uid}</code>"
         if reason:
@@ -491,7 +491,7 @@ def admin_unban_callback(call):
     
     run_query("UPDATE users SET is_banned=0 WHERE uid=?", (uid,))
     
-    bot.answer_callback_query(call.id, "✅ Пользователь разбанен")
+    bot.answer_callback_query(call.id, "✅ Пользователь разблокирован")
     
     # Возвращаем полный набор кнопок после разбана
     bot.edit_message_reply_markup(
@@ -502,7 +502,7 @@ def admin_unban_callback(call):
     
     # Уведомляем пользователя
     try:
-        bot.send_message(uid, "✅ Вы были разбанены службой поддержки SecureWeb.")
+        bot.send_message(uid, "✅ Вы были разблокированы службой поддержки SecureWeb.")
     except:
         pass
     
@@ -545,7 +545,7 @@ def ban_user(call):
     uid = int(call.data.split("_")[1])
     run_query("INSERT OR REPLACE INTO users (uid, is_banned) VALUES (?, 1)", (uid,))
     try:
-        bot.send_message(uid, "🚫 Вы заблокированы службой поддержки.")
+        bot.send_message(uid, "🚫 Вы были заблокированы службой поддержки SecureWeb.")
     except:
         pass
     bot.answer_callback_query(call.id, "Пользователь заблокирован")
