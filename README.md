@@ -1,3 +1,5 @@
+✅ **Совместимо с RemnaWave 3.4.3 и выше!**
+
 # 🎫 RemnaWave Support Bot
 
 ## Бот технической поддержки для VPN-панелей на базе RemnaWave. 
